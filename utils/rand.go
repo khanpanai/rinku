@@ -8,7 +8,7 @@ import (
 var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 func GenerateShortId() string {
-	key := make([]rune, 16)
+	key := make([]rune, 8)
 
 	mx := big.NewInt(int64(len(alphabet)))
 

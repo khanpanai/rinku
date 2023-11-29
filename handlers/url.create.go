@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"rinku/db"
 	"rinku/utils"
@@ -12,14 +11,15 @@ type createLinkRequest struct {
 }
 
 type createLinkResponse struct {
-	Id string
+	Id string `json:"id"`
 }
 
 func (u *url) Create(ctx *fiber.Ctx) error {
 	r := new(createLinkRequest)
 
 	if err := ctx.BodyParser(r); err != nil {
-		return fiber.ErrBadRequest
+		ctx.Status(400)
+		return ctx.JSON("Bad request")
 	}
 
 	var stored db.ShortLink
@@ -39,6 +39,5 @@ func (u *url) Create(ctx *fiber.Ctx) error {
 	}
 
 	u.db.Create(&stored)
-	fmt.Println(stored)
 	return ctx.JSON(createLinkResponse{Id: shortId})
 }
