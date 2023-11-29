@@ -6,7 +6,7 @@
 *.test
 *.out
 go.work
-**/.idea/**
+.idea
 
 # immudb files
 *.identity*
