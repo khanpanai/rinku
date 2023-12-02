@@ -1,0 +1,1 @@
+# リンク · Rinku - single binary URL Shortener & ~~QR Code generator~~ (WIP)

@@ -12,3 +12,6 @@ go.work
 *.identity*
 *.state*
 *.db
+dist/*
+*.ps1
+**/.vite/*
